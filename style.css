@@ -1,0 +1,2263 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+/* GLOBAL DEĞİŞKENLER */
+* {
+    font-family: "Ubuntu", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #9cd208;
+    --white: #fff;
+    --gray: #505962;
+    --black1: #222;
+    --red: #e61414;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    /* Yatay taşmayı gizle */
+}
+
+/*====================LOGIN===============*/
+
+.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #afdf2e, #80ad03);
+}
+
+.login-page .login-container {
+    width: 700px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 7px 25px rgb(0, 0, 0, 0.3);
+
+}
+
+.login-page .login-container .image {
+    width: 350px;
+    height: 350px;
+    overflow: hidden;
+    flex: 1;
+}
+
+.login-page .login-container .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login-page .login-container .content {
+    flex: 1;
+    /* Eşit oranda genişlik alır */
+    display: flex;
+    flex-direction: column;
+    /* İçerikleri dikeyde hizalar */
+    justify-content: center;
+    /* İçerikleri ortalar */
+    padding: 20px;
+    /* İçerik alanına biraz boşluk ekler */
+}
+
+.login-page .login-container .content h2 {
+    text-align: center;
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+.login-page .login-container .content input {
+    font-size: 16px;
+    color: var(--gray);
+    border: none;
+    outline: none;
+    border-bottom: 1px solid var(--green);
+}
+
+.resize-input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    /* Geçiş efekti için */
+    width: 100%;
+    /* Genişlik ayarı (isteğe bağlı) */
+}
+
+/* Mouse ile üzerine gelindiğinde stil */
+.resize-input:hover {
+    transform: scale(1.1);
+    /* Boyutu %10 büyütür */
+}
+
+.login-page .login-container .content input,
+.login-page .login-container .content button {
+    margin-bottom: 10px;
+    /* Öğeler arasında boşluk bırakır */
+    width: 100%;
+    /* Genişliği %100 yapar */
+    padding: 10px;
+    /* İçeriği daha belirgin hale getirir */
+}
+
+.login-page .login-container .btn {
+    margin-top: 10px;
+    position: relative;
+    text-decoration: none;
+    padding: 2px 10px;
+    background: var(--green);
+    border: none;
+    border-radius: 20px;
+    color: var(--white);
+    font-size: 16px;
+}
+
+.login-page .login-container .btn:hover {
+    background: var(--gray);
+    transition: 0.3s ease;
+}
+
+
+.login-page .login-container .content a {
+    margin-top: 20px;
+    /* "Şifremi Unuttum" başlığını diğer içeriklerden ayırır */
+    text-align: center;
+    color: var(--green);
+    border: none;
+}
+
+/*===============================PROFILE.HTML======================*/
+
+.profil-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.profile-page .profile-container {
+    width: 100%;
+    display: flex; /* Ortalamayı kolaylaştırmak için flexbox kullanıyoruz */
+    align-items: center; /* Dikey olarak ortalamak için */
+    justify-content: center; /* Yatay olarak ortalamak için */
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px; /* İçerik kenarlarından biraz boşluk bırakmak için */
+}
+
+
+.profile-page .profile {
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-page.dark .profile{
+    background-color: var(--black1);
+}
+
+.profile-page .profile form{
+    width: 600px;
+}
+
+.profile-page.dark .profile-container{
+    background-color: transparent;
+}
+
+.profile-page .profile h2{
+    color: var(--green);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.profile-page .profile label{
+    color: var(--gray);
+}
+
+/* Dark Mod */
+.profile-page.dark .profile label {
+    color: var(--white);
+}
+
+
+.profile-page .profile input{
+    border-radius: 5px;
+    color: var(--gray);
+}
+
+.profile-page.dark .profile input {
+    color: var(--white) !important;
+}
+
+.profile-page .profile .btn {
+    position: relative;
+    text-decoration: none;
+    padding: 10px 25px;
+    background: var(--green);
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.profile-page .profile .btn:hover {
+    background: var(--gray);
+    transition: 0.3s ease;
+}
+
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input[type="password"] {
+    padding-right: 40px; /* Göz simgesi için yer bırakır */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px; /* Sağdan uzaklık */
+    cursor: pointer;
+    color: var(--gray);
+}
+
+.fa-eye-slash {
+    display: none; /* Göz kapalı simgesini başlangıçta gizler */
+}
+
+/*============================MESSAGE.HTML=====================================*/
+
+.messages-container {
+    max-width: 100%;
+    display: flex; /* Ortalamayı kolaylaştırmak için flexbox kullanıyoruz */
+    align-items: center; /* Dikey olarak ortalamak için */
+    justify-content: space-between; /* Yatay olarak ortalamak için */
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 20px; /* İçerik kenarlarından biraz boşluk bırakmak için */
+    box-shadow: 0 7px 25px rgb(0, 0, 0, 0.3);
+    flex-direction: column;
+    margin: 20px;
+}
+
+.messages-container h2{
+    color: var(--green);
+    margin-bottom: 5px;
+}
+
+body.dark .messages-container h2{
+    color: var(--green);
+}
+
+.messages-container p{
+    color: var(--gray);
+    margin-left: 10px;
+}
+
+.messages-container textarea{
+    color: var(--gray);
+    width: 100%;
+}
+
+.message {
+    padding: 10px;
+    border-bottom: 1px solid var(--green);
+    margin-bottom: 5px;
+    border-radius: 3px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+}
+
+.message .delete {
+    padding: 8px;
+    border-radius: 5px;
+    color: var(--red);
+    font-size: 1.25rem;
+    margin-right: 10px;
+}
+
+body.dark .message .delete i{
+    color: var(--red);
+}
+
+.message .delete:hover {
+    color: var(--white);
+    background: var(--red);
+    transition: 0.3s ease;
+}
+
+body.dark .message .delete:hover i{
+    color: var(--white);
+    background-color: var(--red);
+}
+
+.message:last-child {
+    border-bottom: none;
+}
+
+.message .sender {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.message .content {
+    font-size: 14px;
+}
+
+.reply-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.reply-textarea {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.messages-container .btn {
+    position: relative;
+    text-decoration: none;
+    padding: 10px 10px;
+    background: var(--green);
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100px;
+}
+
+.messages-container .btn:hover {
+    background: var(--gray);
+    transition: 0.3s ease;
+}
+
+/*===============================INDEX.HTML=====================*/
+
+.container {
+    position: relative;
+    /* .container içindeki herhangi bir pozisyonlanmış (örneğin absolute, fixed) alt öğenin bu öğeye göre pozisyonlanmasına izin verir. */
+    width: 100%;
+}
+
+.navbar {
+    position: fixed;
+    /* position: fixed; : Bu özellik, .navbar öğesini tarayıcı penceresine sabitler. Bu öğe sayfayı kaydırırken bile aynı yerde kalır. */
+    width: 300px;
+    height: 100%;
+    background: var(--green);
+    border-left: 10px solid var(--green);
+    overflow-y: auto; /* Y yönünde (aşağı) taşma durumunda kaydırma çubuğu göster */
+    overflow-x: hidden; /* X yönünde taşmayı gizle */
+    transition: 0.2s ease;
+}
+
+/* Scrollbar'ın tamamı */
+.navbar::-webkit-scrollbar {
+    width: 12px; /* Scrollbar genişliği */
+    background-color: var(--white); /* Arka plan rengi */
+}
+
+/* Scrollbar kaydırma çubuğu (thumb) */
+.navbar::-webkit-scrollbar-thumb {
+    background-color: var(--green); /* Kaydırma çubuğu rengi */
+    border-radius: 10px; /* Köşe yuvarlama */
+    border: 2px solid #b6f703; /* Kenarlık ve dolgu oluşturma */
+}
+
+/* Scrollbar köşe ve uçları (track) */
+.navbar::-webkit-scrollbar-track {
+    background-color: var(--white); /* Track arka plan rengi */
+}
+
+
+.navbar.active {
+    /* menu butonuna basıldığında navbarın genişliği 85px görünecek */
+    width: 85px;
+}
+
+.navbar ul {
+    position: absolute; /* Position fixed olarak ayarladık */
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navbar ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    transition: 0.2s ease;
+}
+
+.navbar ul li:hover,
+.navbar ul li.hovered {
+    background-color: var(--white);
+    transition: 0.2s ease;
+}
+
+body.dark .navbar ul li:hover,
+body.dark .navbar ul li.hovered {
+    background-color: var(--green);
+    transition: 0.2s ease;
+}
+
+.navbar ul li:nth-child(1) {
+    margin-bottom: 40px;
+    pointer-events: none;
+    font-weight: bold;
+}
+
+.navbar ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+    margin-left: 10px;
+}
+
+/* Normal modda active link stili */
+.navbar li a.active {
+    background-color: var(--white);
+    border-top-left-radius: 35px;
+    border-bottom-left-radius: 35px;
+    color: var(--green);
+}
+
+.navbar ul li a:hover,
+.navbar ul li.hovered a {
+    color: var(--green);
+    transition: 0.2s ease;
+    background-color: transparent;
+}
+
+.navbar ul li a .icon {
+    position: relative;
+    display: block;
+    min-width: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: 1.60rem;
+}
+
+.navbar ul li a .title {
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    line-height: 60px;
+    font-size: 18px;
+}
+
+.navbar ul li a .dropdown {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    transition: 0.3s ease;
+}
+
+body.dark .navbar ul li a .icon,
+body.dark .navbar ul li a i,
+body.dark .navbar ul li a .title,
+body.dark .navbar ul li a .dropdown{
+    background-color: transparent;
+}
+
+.sub-menu {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+}
+
+.sub-menu.show {
+    display: block;
+    margin-left: 60px;
+}
+
+.sub-menu .sub-item {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--white);
+    padding: 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-bottom: 2px;
+}
+
+
+.sub-menu .sub-item:hover {
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.sub-menu .sub-item:active,
+.sub-menu .sub-item.active {
+    background-color: var(--green); /* Aktif rengi */
+    color: var(--white);
+}
+
+body.dark .sub-menu .sub-item:active{
+    background-color: var(--green); /* Aktif rengi */
+    color: var(--white);
+}
+
+.navbar ul li.sub-btn {
+    position: relative;
+}
+
+.navbar ul li.sub-btn.open + li {
+    margin-top: 5px;
+}
+
+.navbar ul li.sub-btn.open ~ li {
+    transform: translateY(calc(var(--sub-menu-height) + 5px)); /* Alt öğeleri sub-menu'nin yüksekliği kadar kaydır ve 5px boşluk bırak */
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+/* ============================== ( MAIN )===================================  */
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.3s ease;
+}
+
+.main.active {
+    width: calc(100% - 85px);
+    left: 85px;
+}
+
+.topbar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s ease;
+    /* aşağı ve yukarı kaydırken yumuşak bir hzı sağlar */
+}
+
+.topbar .toogle {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    font-size: 1.75rem;
+    filter: brightness(1.5);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+}
+
+body.dark .topbar .toogle{
+    background-color: transparent;
+}
+
+body.dark .topbar .toogle i{
+    background-color: transparent;
+}
+
+/* ================SEARCH BUTON==================
+.topbar .search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+    
+}
+
+.topbar .search label{
+    position: relative;
+    width: 100%;
+}
+
+.topbar .search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black1);
+    opacity: 0.5;
+}
+
+.topbar .search label i{
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+*/
+
+/* ===============================DARK MODE=================================== */
+
+.topbar .dark-mode{
+    position: absolute;
+    right: 90px;
+    height: 50px;
+    min-width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.topbar .dark-mode .switch{
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    width: 40px;
+    background-color: var(--green);
+    opacity: 0.6;
+    border-radius: 25px;
+}
+
+.topbar .dark-mode .switch::before{
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: var(--white);
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    transition: 0.5 ease;
+}
+
+/* Dark modu etkinleştirildiğinde renkleri değiştir */
+
+body.dark * {
+    color: var(--white);
+    background-color: var(--black1);
+}
+
+body.dark .notification-dot{
+    background-color: var(--green);
+}
+
+body.dark .navbar{
+    border-left: 10px solid var(--black1);
+}
+
+body.dark .navbar ul li {
+    background: none;
+}
+
+body.dark .navbar li a.active {
+    background: none;
+}
+
+body.dark .navbar::-webkit-scrollbar-track {
+    background-color: var(--black1); /* Track arka plan rengi */
+}
+body.dark .card{
+    background-color: var(--black1);
+}
+
+body.dark .box{
+    background-color: var(--black1);
+}
+
+
+body.dark a {
+    color: var(--green);
+}
+
+body.dark a:hover {
+    color: var(--white);
+}
+
+body.dark button {
+    background-color: var(--gray);
+    color: var(--white);
+}
+
+body.dark button:hover {
+    background-color: var(--black1);
+    color: var(--white);
+}
+
+body.dark .topbar {
+    background-color: var(--black1);
+}
+
+body.dark .user-menu{
+    background-color: var(--black1);
+}
+
+body.dark .topbar .dark-mode .switch {
+    background-color: var(--white);
+}
+
+body.dark .topbar .dark-mode .switch::before {
+    background-color: var(--green);
+    left: 20px;
+}
+
+
+/* ================================USER DROPDOWN=======================  */
+.user {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin-right: 25px;
+
+}
+
+.user img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+
+}
+
+.notification-dot {
+    position: absolute;
+    top: -4px; /* Profil fotoğrafının dışına taşması için */
+    right: -4px; /* Profil fotoğrafının dışına taşması için */
+    width: 15px;
+    height: 15px;
+    background-color: var(--green);
+    border-radius: 50%;
+    border: 2px solid white;
+    display: none; /* Başlangıçta gizli */
+    z-index: 10; /* Diğer elementlerin üstünde görünmesi için */
+}
+
+.user.show-notification .notification-dot {
+    display: block; /* Bildirim geldiğinde göster */
+}
+
+
+.topbar .user-menu-dropdown {
+    position: absolute;
+    top: 55px;
+    right: 5px;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 7px 25px rgb(0, 0, 0, 0.3);
+    z-index: 1;
+    max-height: 0px;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+
+.topbar .user-menu-dropdown.openMenu {
+    max-height: 350px;
+}
+
+.topbar .user-menu {
+    background: var(--white);
+    padding: 20px;
+    margin: 10px;
+}
+
+.topbar .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.topbar .user-info h3 {
+    font-weight: 400;
+    color: var(--gray);
+    margin-bottom: 5px;
+}
+
+body.dark .topbar .user-info h3{
+    color: var(--green);
+}
+.user-menu-link {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 20px;
+    /* Öğeler arasındaki dikey boşluk */
+    margin-top: 15px;
+}
+
+.user-menu-link ul li {
+    width: 100%;
+    background: var(--white);
+    margin-bottom: 5px;
+    list-style: none;
+    padding: 10px 10px;
+    border-radius: 35px;
+    left: 0;
+}
+
+.user-menu-link a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 1.10rem;
+}
+
+.user-menu-link a:hover {
+    color: var(--white);
+    transition: 0.5s ease;
+}
+
+.user-menu-link li:hover {
+    background-color: var(--green);
+    transition: 0.5s ease;
+}
+
+body.dark .user-menu-link li:hover{
+    background-color: var(--green);
+}
+
+body.dark .user-menu-link a:hover{
+    background-color: transparent;
+}
+
+.user-menu-link i {
+    margin-right: 10px;
+    /* Icon ile text arasındaki boşluk */
+    padding: 0;
+}
+
+.user-menu-link h2 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    flex-grow: 1;
+    padding: 0 5px;
+}
+
+.user-menu-link span {
+    margin-left: 10px;
+    /* Text ile ok işareti arasındaki boşluk */
+    font-size: 1.3rem;
+}
+
+body.dark .user-menu-link li{
+    background-color: transparent;
+}
+
+body.dark .user-menu-link a,
+body.dark .user-menu-link i,
+body.dark .user-menu-link h2,
+body.dark .user-menu-link span{
+    background-color: transparent;
+}
+
+.user-menu-link .not{
+    padding: 6px;
+    background-color: var(--green);
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: 3px;
+}
+
+body.dark .user-menu-link .not{
+    background-color: var(--green);
+}
+
+/* ==============================CARDS========================== */
+
+.cardbox {
+    position: relative;
+    width: 100%;
+    padding: 50px;
+    padding-left: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* üç eşit genişlikte (repeat) sütuna sahip bir grid oluşturur. Her sütun, grid konteynerinin genişliğinin üçte birini kaplar. */
+    grid-gap: 30px;
+    /* kutular arası boşluk */
+}
+
+.cardbox .card {
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    /* card div'inin içindeki iki ana div için geçerli */
+    box-shadow: 0 7px 25px rgb(0, 0, 0, 0.3);
+}
+
+.cardbox .card .numbers {
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--green);
+}
+
+.cardbox .card .cardname {
+    color: var(--gray);
+    opacity: 0.7;
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.cardbox .card .iconBox {
+    font-size: 3.5rem;
+    color: var(--gray);
+    opacity: 0.6;
+}
+
+
+.cardbox .card:hover {
+    background: var(--green);
+    transition: 0.5s ease;
+}
+
+.cardbox .card:hover .numbers,
+.cardbox .card:hover .cardname,
+.cardbox .card:hover .iconBox {
+    color: var(--white);
+    transition: 0.5s ease;
+}
+
+body.dark .card:hover .numbers,
+body.dark .card:hover .cardname,
+body.dark .card:hover .iconBox {
+    background-color: var(--green);
+    color: var(--white);
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+body.dark .card:hover .card-title {
+    background-color: var(--green);
+    transition: 0.5s ease;
+}
+
+body.dark .card:hover i {
+    background-color: var(--green);
+    transition: 0.5s ease;
+}
+
+/* GRAFİKLER */
+
+.grapbox {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+    margin-top: 10px;
+    min-height: 200px;
+}
+
+.grapbox .box {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    background: var(--white);
+    box-shadow: 0 7px 25px rgb(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+/* SİPARİŞ LİSTESİ */
+
+.details {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+    margin-top: 10px;
+}
+
+.details .recentOrders {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 30px;
+    box-shadow: 0 7px 25px rgb(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.details .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.details .cardHeader h2 {
+    font-weight: 600;
+    color: var(--green);
+}
+
+.details .cardHeader .btn {
+    position: relative;
+    text-decoration: none;
+    padding: 6px 20px;
+    background: var(--green);
+    border-radius: 6px;
+    color: var(--white);
+}
+
+.details .cardHeader .btn:hover {
+    background: var(--gray);
+    transition: 0.3s ease;
+}
+
+.hidden {
+    /* tabloların görünürlüğü ayarlayan js kodunda kullanılacak */
+    display: none;
+}
+
+.details table {
+    width: 100%;
+    border-collapse: collapse;
+    /* bitişik tablo hücrelerinin kenarlıklarını birleştirir */
+    margin-top: 50px;
+}
+
+.details table thead td {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 10px;
+}
+
+.details table tr {
+    color: var(--black1);
+    border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+    border-color: var(--green);
+}
+
+body.dark .details table thead td{
+    color: var(--green);
+}
+.details table tr:last-child {
+    border-bottom: none;
+}
+
+.details table tbody td {
+    padding: 10px;
+}
+
+.details table td:nth-child(2),
+.details table td:nth-child(3),
+.details table td:nth-child(4) {
+    text-align: center;
+}
+
+.details table .status.teslim {
+    color: var(--green);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.details table .status.hazir {
+    color: var(--black1);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+body.dark .details table .status.hazir{
+    color: var(--white);
+}
+
+.details table .status.iade {
+    color: var(--red);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.page {
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0.75rem 1rem;
+    /* Rem birimi kullanarak orantılı boyut */
+    border-radius: 8px;
+}
+
+.page li {
+    margin: 0.25rem;
+    padding: 0.75rem 1rem;
+    /* Rem birimi kullanarak orantılı boyut */
+    border-radius: 8px;
+    background-color: var(--gray);
+    box-shadow: 0 7px 25px rgb(0, 0, 0, 0.3);
+
+}
+
+.page li a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+body.dark .page li a{
+    background-color: transparent;
+}
+
+.page li:hover {
+    background-color: var(--green);
+    transition: 0.3s ease;
+}
+
+.page li.active {
+    background: var(--green);
+}
+
+/* ========================MÜŞTERİ LİSTESİ =========================*/
+
+.details .recentcustomers {
+    position: relative;
+    display: grid;
+    min-height: 500px;
+    padding: 30px;
+    box-shadow: 0 7px 25px rgb(0, 0, 0, 0.3);
+    border-radius: 20px;
+}
+
+.details .baslik {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recentcustomers .search {
+    position: relative;
+    width: 300px;
+    margin: 0 10px;
+
+}
+
+.recentcustomers .search label {
+    position: relative;
+    width: 100%;
+}
+
+.recentcustomers .search label input {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    font-size: 18px;
+    outline: none;
+    border: 1px solid var(--black1);
+    opacity: 0.5;
+}
+
+body.dark .recentcustomers .search label input{
+    border: 1px solid var(--white);
+}
+
+.recentcustomers .search label i {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    font-size: 1.2rem;
+    opacity: 0.5;
+}
+
+.details .recentcustomers .imgbox {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.details .recentcustomers .imgbox img {
+    position: absolute;
+    /* bir üstteki imgbox'a göre konumlanacak */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.details .recentcustomers table tr td {
+    padding: 12px 10px;
+}
+
+body.dark .details .recentcustomers table tr td{
+    color: var(--green);
+}
+
+
+.details .recentcustomers table tr td h4 {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+body.dark .details .recentcustomers table tr td h4{
+    color: var(--white);
+}
+
+.details .recentcustomers table .view {
+    padding: 8px;
+    border-radius: 5px;
+    color: var(--gray);
+    font-size: 1.25rem;
+}
+
+.details .recentcustomers table .update {
+    padding: 8px;
+    border-radius: 5px;
+    color: var(--green);
+    font-size: 1.25rem;
+}
+
+body.dark .details .recentcustomers table .update i{
+    color: var(--green);
+    background-color: transparent;
+}
+
+.details .recentcustomers table .delete {
+    padding: 8px;
+    border-radius: 5px;
+    color: var(--red);
+    font-size: 1.25rem;
+}
+
+body.dark .details .recentcustomers table .delete i{
+    color: var(--red);
+    background-color: transparent;
+}
+
+
+.details .recentcustomers table .view:hover {
+    color: var(--white);
+    background: var(--gray);
+    transition: 0.3s ease;
+}
+
+.details .recentcustomers table .update:hover {
+    color: var(--white);
+    background: var(--green);
+    transition: 0.3s ease;
+}
+
+body.dark .details .recentcustomers table .update:hover i{
+    color: var(--white);
+    background-color: var(--green);
+    transition: 0.3s ease;
+}
+
+.details .recentcustomers table .delete:hover {
+    color: var(--white);
+    background: var(--red);
+    transition: 0.3s ease;
+}
+
+body.dark .details .recentcustomers table .delete:hover i{
+    color: var(--white);
+    background-color: var(--red);
+    transition: 0.3s ease;
+}
+
+.details .recentcustomers .btn {
+    position: relative;
+    text-decoration: none;
+    padding: 10px 25px;
+    background: var(--green);
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 18px;
+}
+
+.details .recentcustomers .btn:hover {
+    background: var(--gray);
+    transition: 0.3s ease;
+}
+
+/* ======================YENİ CARİ EKLEME MODAL İÇERİK KUTUSU================ */
+
+/* Modal pencere temel stili */
+.modal {
+    display: none;
+    /* Varsayılan olarak gizli */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+    /* Arka plan için geçiş efekti */
+    opacity: 0;
+    /* Başlangıçta görünmez */
+}
+
+.modal-content {
+    background-color: var(--white);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    transform: translateY(-100%);
+    /* Modal yukarıda gizlenmiş */
+    transition: transform 0.3s ease;
+    /* Yumuşak geçiş efekti */
+
+}
+
+/* Modal görünür olduğunda */
+.modal.show {
+    display: block;
+    opacity: 1;
+    /* Arka plan görünür hale gelir */
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+    /* Modal aşağıya doğru hareket eder */
+}
+
+.modal-content h2 {
+    color: var(--green);
+    margin-bottom: 10px;
+}
+
+body.dark .modal-content h2{
+    background-color: transparent;
+}
+
+.modal-content label {
+    color: var(--gray);
+}
+
+body.dark .modal-content{
+    background-color: var(--white);
+}
+
+body.dark .modal-content form{
+    background-color: var(--white);
+}
+
+body.dark .modal-content label {
+    color: var(--black1);
+    background-color: transparent;
+}
+
+/* Tıklanıldığında */
+.modal-content label:active {
+    border: 1px solid var(--highlight);
+    /* Kenar rengini değiştirir */
+}
+
+/* Odaklanıldığında (isteğe bağlı) */
+.modal-content label:focus-within {
+    border: 1px solid var(--highlight);
+}
+
+.modal-content .btn {
+    position: relative;
+    text-decoration: none;
+    padding: 10px 25px;
+    background: var(--green);
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.modal-content .btn:hover {
+    background: var(--gray);
+    transition: 0.3s ease;
+}
+
+/* Kapatma butonu */
+.close {
+    color: var(--gray);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--green);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* Form alanları */
+#crudForm input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid var(--green);
+}
+
+body.dark #crudForm input{
+    border: 1px solid var(--green);
+    background-color: transparent;
+    color: var(--black1);
+}
+/* ============================CARİ EKLEME BAŞARILI MODALI================================== */
+
+/* Modal genel stilleri */
+#addSuccessModal.modalSuc {
+    display: none;
+    /* Modal başlangıçta gizli */
+    position: fixed;
+    /* Ekrana sabitler */
+    z-index: 1;
+    /* Üst katman */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Tam ekran genişliği */
+    height: 100%;
+    /* Tam ekran yüksekliği */
+    overflow: auto;
+    /* İçerik taşması */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Yarı saydam arka plan */
+    
+}
+
+/* Modal içerik */
+#addSuccessModal .modal-content {
+    background-color: #fefefe;
+    margin: 25% auto;
+    /* Ekranın ortasına yerleştirir */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Modal genişliği */
+    max-width: 400px;
+    /* Maksimum genişlik */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    /* Yuvarlatılmış köşeler */
+    text-align: center;
+    /* Metni ortalar */
+}
+
+body.dark #addSuccessModal .modal-content{
+    background-color: var(--white);
+}
+
+/* Modal içerikteki metin */
+#addSuccessModal .modal-content p {
+    font-size: 18px;
+    color: var(--gray);
+    margin-top: 10px;
+}
+
+body.dark #addSuccessModal .modal-content p{
+    color: var(--black1);
+    background-color: transparent;
+}
+
+/* Checkmark Animasyon Konteyneri */
+#addSuccessModal .checkmark-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+body.dark #addSuccessModal .checkmark-container{
+    background-color: transparent;
+}
+
+/* Checkmark Ana Yapısı */
+#addSuccessModal .checkmark {
+    width: 80px;
+    /* Daire boyutu */
+    height: 80px;
+    /* Daire boyutu */
+    border-radius: 50%;
+    background-color: var(--green);
+    /* Yeşil tik rengi */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Checkmark Stem ve Kick */
+#addSuccessModal .checkmark-stem,
+#addSuccessModal .checkmark-kick {
+    position: absolute;
+    background-color: white;
+}
+
+
+#addSuccessModal .checkmark-stem {
+    width: 8px;
+    height: 40px;
+    top: 15px;
+    left: 28px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+    animation: drawStem 0.5s ease forwards;
+    animation-fill-mode: backwards;
+    animation-delay: calc(0.3s * var(--index));
+    /* increased delay */
+}
+
+#addSuccessModal .checkmark-kick {
+    width: 8px;
+    height: 20px;
+    top: 40px;
+    left: 32px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+    animation: drawKick 0.3s ease-in-out forwards;
+    animation-fill-mode: backwards;
+    animation-delay: calc(0.1s * var(--index));
+    /* decreased delay */
+}
+
+/* Animasyonlar */
+@keyframes drawKick {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes drawStem {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.kick {
+    animation: drawKick 0.1s ease-in-out forwards;
+    animation-delay: calc(0.1s * var(--index));
+}
+
+.stem {
+    animation: drawStem 0.3s ease-in-out forwards;
+    animation-delay: calc(0.3s * var(--index));
+}
+
+/* =====================CARİ SİLME MODAL İÇERİK KUTUSU=========================== */
+
+/* Modal için genel stil */
+.modalDel {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+
+}
+
+/* Modal içerik stili */
+.modalDel .modal-content {
+    background-color: var(--white);
+    margin: 20% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    transform: translateY(-100%);
+    /* Modal yukarıda gizlenmiş */
+    transition: transform 0.3s ease;
+    /* Yumuşak geçiş efekti */
+}
+
+/* Modal görünür olduğunda */
+.modalDel.show {
+    display: block;
+    opacity: 1;
+    /* Arka plan görünür hale gelir */
+}
+
+.modalDel.show .modal-content {
+    transform: translateY(0);
+    /* Modal aşağıya doğru hareket eder */
+}
+
+.modalDel .modal-content p {
+    color: var(--gray);
+    margin-bottom: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+body.dark .modalDel .modal-content p{
+    color: var(--black1);
+    background-color: transparent;
+}
+
+.modalDel .modal-content .btn {
+    left: 130px;
+}
+
+body.dark .close{
+    background-color: transparent;
+    color: var(--black1);
+}
+
+/* Butonlar için stil */
+#confirmDelete {
+    background-color: var(--red);
+    color: white;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+#cancelDelete {
+    background-color: var(--gray);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* =======================ONAYLANAN SİLME İŞLEMİ PENCERESİ================ */
+
+/* Modal genel stilleri */
+#successModal.modalSuc {
+    display: none;
+    /* Modal başlangıçta gizli */
+    position: fixed;
+    /* Ekrana sabitler */
+    z-index: 1;
+    /* Üst katman */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Tam ekran genişliği */
+    height: 100%;
+    /* Tam ekran yüksekliği */
+    overflow: auto;
+    /* İçerik taşması */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Yarı saydam arka plan */
+}
+
+/* Modal içerik */
+#successModal .modal-content {
+    background-color: #fefefe;
+    margin: 25% auto;
+    /* Ekranın ortasına yerleştirir */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Modal genişliği */
+    max-width: 400px;
+    /* Maksimum genişlik */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    /* Yuvarlatılmış köşeler */
+    text-align: center;
+    /* Metni ortalar */
+}
+
+body.dark #successModal .modal-content{
+    background-color: var(--white);
+}
+
+/* Modal içerikteki metin */
+#successModal .modal-content p {
+    font-size: 18px;
+    color: var(--gray);
+    margin-top: 10px;
+}
+
+body.dark #successModal .modal-content p{
+    background-color: transparent;
+    color: var(--black1);
+}
+
+/* Checkmark Animasyon Konteyneri */
+#successModal .checkmark-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+body.dark #successModal .checkmark-container{
+    background-color: transparent;
+}
+
+/* Checkmark Ana Yapısı */
+#successModal .checkmark {
+    width: 80px;
+    /* Daire boyutu */
+    height: 80px;
+    /* Daire boyutu */
+    border-radius: 50%;
+    background-color: var(--green);
+    /* Yeşil tik rengi */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Checkmark Stem ve Kick */
+#successModal .checkmark-stem,
+#successModal .checkmark-kick {
+    position: absolute;
+    background-color: white;
+}
+
+#successModal .checkmark-stem {
+    width: 8px;
+    height: 40px;
+    top: 15px;
+    left: 28px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+    animation: drawStem 0.5s ease forwards;
+    animation-fill-mode: backwards;
+    animation-delay: calc(0.3s * var(--index));
+    /* increased delay */
+}
+
+#successModal .checkmark-kick {
+    width: 8px;
+    height: 20px;
+    top: 40px;
+    left: 32px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+    animation: drawKick 0.3s ease-in-out forwards;
+    animation-fill-mode: backwards;
+    animation-delay: calc(0.1s * var(--index));
+    /* decreased delay */
+}
+
+/* Animasyonlar */
+@keyframes drawKick {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes drawStem {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.kick {
+    animation: drawKick 0.1s ease-in-out forwards;
+    animation-delay: calc(0.1s * var(--index));
+}
+
+.stem {
+    animation: drawStem 0.3s ease-in-out forwards;
+    animation-delay: calc(0.3s * var(--index));
+}
+
+/*=========================CARİ GÜNCELLEME======================================*/
+
+/* Güncelleme Modal Genel Stili */
+#updateModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+#updateModal .modal-content {
+    background-color: var(--white);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+}
+
+body.dark #updateModal .modal-content{
+    background-color: var(--white);
+}
+
+/* Modal görünür olduğunda */
+#updateModal.show {
+    display: block;
+    opacity: 1;
+}
+
+#updateModal.show .modal-content {
+    transform: translateY(0);
+}
+
+/* Başlık Stili */
+#updateModal .modal-content h2 {
+    color: var(--green);
+    margin-bottom: 10px;
+}
+
+/* Form Etiket ve Input Alanları */
+#updateModal .modal-content label {
+    color: var(--gray);
+}
+
+#updateModal .modal-content input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    box-sizing: border-box;
+    border: 1px solid var(--green);
+}
+
+body.dark #updateModal h2{
+    background-color: transparent;
+}
+
+body.dark #updateModal form{
+    background-color: transparent;
+}
+
+body.dark #updateModal label,
+body.dark #updateModal input{
+    background-color: var(--white);
+    color: var(--black1);
+}
+
+/* Güncelle Butonu */
+#updateModal .modal-content .btn {
+    position: relative;
+    text-decoration: none;
+    padding: 10px 25px;
+    background: var(--green);
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+#updateModal .modal-content .btn:hover {
+    background: var(--gray);
+    transition: 0.3s ease;
+}
+
+/* Kapatma Butonu */
+#updateModal .close {
+    color: var(--gray);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+body.dark #updateModal .close{
+    background-color: transparent;
+}
+
+#updateModal .close:hover,
+#updateModal .close:focus {
+    color: var(--green);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/*====================================================================*/
+
+/* Modal genel stilleri */
+#UpsuccessModal.modalSuc {
+    display: none;
+    /* Modal başlangıçta gizli */
+    position: fixed;
+    /* Ekrana sabitler */
+    z-index: 1;
+    /* Üst katman */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Tam ekran genişliği */
+    height: 100%;
+    /* Tam ekran yüksekliği */
+    overflow: auto;
+    /* İçerik taşması */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Yarı saydam arka plan */
+}
+
+/* Modal içerik */
+#UpsuccessModal .modal-content {
+    background-color: #fefefe;
+    margin: 25% auto;
+    /* Ekranın ortasına yerleştirir */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    /* Modal genişliği */
+    max-width: 400px;
+    /* Maksimum genişlik */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    /* Yuvarlatılmış köşeler */
+    text-align: center;
+    /* Metni ortalar */
+}
+
+body.dark #UpsuccessModal .modal-content{
+    background-color: var(--white);
+}
+
+/* Modal içerikteki metin */
+#UpsuccessModal .modal-content p {
+    font-size: 18px;
+    color: var(--gray);
+    margin-top: 10px;
+}
+
+body.dark #UpsuccessModal .modal-content p{
+    background-color: transparent;
+    color: var(--black1);
+}
+
+/* Checkmark Animasyon Konteyneri */
+#UpsuccessModal .checkmark-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+body.dark #UpsuccessModal .checkmark-container{
+    background-color: transparent;
+}
+
+/* Checkmark Ana Yapısı */
+#UpsuccessModal .checkmark {
+    width: 80px;
+    /* Daire boyutu */
+    height: 80px;
+    /* Daire boyutu */
+    border-radius: 50%;
+    background-color: var(--green);
+    /* Yeşil tik rengi */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Checkmark Stem ve Kick */
+#UpsuccessModal .checkmark-stem,
+#UpsuccessModal .checkmark-kick {
+    position: absolute;
+    background-color: white;
+}
+
+#UpsuccessModal .checkmark-stem {
+    width: 8px;
+    height: 40px;
+    top: 15px;
+    left: 28px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    transform: rotate(45deg);
+    transform-origin: bottom left;
+    animation: drawStem 0.5s ease forwards;
+    animation-fill-mode: backwards;
+    animation-delay: calc(0.3s * var(--index));
+    /* increased delay */
+}
+
+#UpsuccessModal .checkmark-kick {
+    width: 8px;
+    height: 20px;
+    top: 40px;
+    left: 32px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+    animation: drawKick 0.3s ease-in-out forwards;
+    animation-fill-mode: backwards;
+    animation-delay: calc(0.1s * var(--index));
+    /* decreased delay */
+}
+
+/* Animasyonlar */
+@keyframes drawKick {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes drawStem {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.kick {
+    animation: drawKick 0.1s ease-in-out forwards;
+    animation-delay: calc(0.1s * var(--index));
+}
+
+.stem {
+    animation: drawStem 0.3s ease-in-out forwards;
+    animation-delay: calc(0.3s * var(--index));
+}
+
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    margin: 50px;
+}
+/*==============================(RESPONSIVE)=========================*/
+
+@media(max-width:991px) {
+    .navbar {
+        left: -300px;
+    }
+
+    .navbar.active {
+        width: 300px;
+        left: 0;
+    }
+
+    .main {
+        width: 100%;
+        left: 0;
+    }
+
+    .main.active {
+        left: 300px;
+    }
+
+    .cardbox {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .grapbox {
+        grid-template-columns: repeat(1, 1fr);
+        height: auto;
+        /* yüksekliği içeriğine göre otomatik artsın */
+    }
+}
+
+@media(max-width:768px) {
+    .myLine {
+        overflow-x: auto;
+    }
+
+    .details {
+        grid-template-columns: 1fr;
+    }
+
+    .recentOrders {
+        overflow-x: auto;
+        /* bu boyutta x ekseninde kaydırma çubuğu çıksın */
+    }
+
+    .recentcustomers {
+        overflow-x: auto;
+        /* bu boyutta x ekseninde kaydırma çubuğu çıksın */
+    }
+
+    .recentcustomers .button {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@media(max-width:480px) {
+    .user {
+        min-width: 40px;
+        object-fit: cover;
+    }
+
+    .navbar {
+        width: 100px;
+        left: -100;
+        z-index: 1000;
+    }
+
+    .navbar.active {
+        width: 100%;
+        left: 0;
+    }
+
+    .toogle {
+        z-index: 10001;
+    }
+
+    .main.active .toogle {
+        color: var(--white);
+        position: fixed;
+        /* yani öğe pencerenin belirli bir noktasına sabitlenir ve sayfa kaydırıldığında bile aynı yerde kalır. */
+        right: 0;
+        /* öğenin sağ kenarının pencerenin sağ kenarına hizalanmasını sağlar. */
+        left: initial;
+        /*  Bu, .toogle sınıfına sahip öğenin sol kenarının varsayılan pozisyonunu korur ve 
+        sağ kenarın hizalanmasını sağlamak için left özelliğini devre dışı bırakır. 
+        */
+    }
+
+    .topbar .user-menu-dropdown {
+        width: auto;
+        height: auto;
+    }
+
+    .login-page .login-container {
+        width: 90%;
+        /* Ekran genişliğinin %90'ı kadar */
+        max-width: 400px;
+        /* Maksimum genişlik */
+        margin: 0 auto;
+        /* Orta hizalamak için */
+    }
+
+    .page {
+        padding: 0.5rem 0.75rem;
+        /* İç boşlukları küçült */
+    }
+
+    .page li {
+        margin: 0.15rem;
+        padding: 0.5rem 0.75rem;
+        /* İç boşlukları küçült */
+    }
+
+    .page li a {
+        font-size: 0.875rem;
+        /* Yazı boyutunu küçült */
+    }
+
+    .login-page .login-container .content a {
+        font-size: 14px;
+        margin-top: 3px;
+    }
+
+    .modalDel .modal-content,
+    .modal-content {
+        width: 90%;
+        /* Mobil ekranlarda daha geniş modal */
+        margin: 20% auto;
+        /* Ekranın ortasına yerleştirin */
+        transform: translateY(0);
+        /* Modal görünür durumda */
+    }
+    
+    .modalDel .modal-content .btn{
+        left: 60px;
+    }
+
+    footer{
+        font-size: 14px;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarkTech | Site Ayarları</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="profile-page" id="settings-page">
+
+    <!--NAVBAR-->
+    <div class="container">
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-power-off"></i></span>
+                        <span class="title">StarkTech</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="title">Anasayfa</span>
+                    </a>
+                </li>
+                <li class="sub-btn">
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-users"></i></span>
+                        <span class="title">Müşteriler</span>
+                        <span class="icon"><i class="fa-solid fa-caret-right dropdown"></i></span>
+                    </a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">Deneme 1</a>
+                        <a href="#" class="sub-item">Deneme 2</a>
+                        <a href="#" class="sub-item">Deneme 3</a>
+                        <a href="#" class="sub-item">Deneme 4</a>
+                        <a href="#" class="sub-item">Deneme 5</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="message.html">
+                        <span class="icon"><i class="fa-regular fa-comment"></i></span>
+                        <span class="title">Mesajlar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-question"></i></span>
+                        <span class="title">Yardım </span>
+                    </a>
+                </li>
+                <li class="sub-btn">
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-gears"></i></span>
+                        <span class="title">Ayarlar</span>
+                        <span class="icon"><i class="fa-solid fa-caret-right dropdown"></i></span>
+                    </a>
+                    <div class="sub-menu">
+                        <a href="settings.html" class="sub-item">Site Ayarları</a>
+                        <a href="profile.html" class="sub-item">Kullanıcı Ayarları</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span class="title">Çıkış</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--MAIN-->
+    <div class="main">
+        <div class="topbar">
+            <div class="toogle"><i class="fa-solid fa-bars"></i></div>
+            <!---==========SEARCH===========
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Ara">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </div>
+            -->
+            <div class="dark-mode">
+                <span class="switch"></span>
+            </div>
+            <div class="user">
+                <img src="images/image1.jpeg" alt="" onclick="toogleMenu()">
+                <div class="notification-dot"></div>
+            </div>
+            <div class="user-menu-dropdown" id="userMenu">
+                <div class="user-menu">
+                    <div class="user-info">
+                        <h3>Simge Mermertaş</h3>
+                    </div>
+                    <hr>
+                    <div class="user-menu-link">
+                        <ul>
+                            <li>
+                                <a href="profile.html">
+                                    <i class="fa-solid fa-user"></i>
+                                    <h2>Profil</h2>
+                                    <span> <i class="fa-solid fa-caret-right"></i> </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="message.html">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <h2>Mesajlar</h2>
+                                    <span class="not"> 1 </span>
+                                    <span> <i class="fa-solid fa-caret-right"></i> </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="settings.html">
+                                    <i class="fa-solid fa-gears"></i>
+                                    <h2>Ayarlar</h2>
+                                    <span> <i class="fa-solid fa-caret-right"></i> </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="login.html">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                    <h2>Çıkış</h2>
+                                    <span> <i class="fa-solid fa-caret-right"></i> </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Penceresi (EKLE) -->
+        <div class="profile-container">
+            <div id="mySetting" class="profile">
+                <form id="crudForm">
+                    <h2>- Site Ayarları -</h2>
+                    <label for="name">Domain:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="name">Site Adı(Title):</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="name">Açıklama(Description):</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="name">Site Footer:</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="profilePic">Site Logo:</label>
+                    <input type="file" id="profilePic" name="profilePic" accept="image/png, image/jpeg">
+
+                    <button class="btn" type="submit" id="profileButton">Kaydet</button>
+                </form>
+            </div>
+        </div>
+        <footer>© Copyright 2024 Starktech Yazılım Teknolojileri. All Rights Reserved</footer>
+    </div>
+
+
+    <!---SCRIPTS--> <!--==NOT: AŞAĞIDAKİ SIRAYLA YAZILMALI===-->
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarkTech Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" href="favicon.ico">
+
+</head>
+
+<body id="home-page">
+    <!--NAVBAR-->
+    <div class="container">
+        <div class="navbar">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-power-off"></i></span>
+                        <span class="title">StarkTech</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html">
+                        <span class="icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="title">Anasayfa</span>
+                    </a>
+                </li>
+                <li class="sub-btn">
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-users"></i></span>
+                        <span class="title">Müşteriler</span>
+                        <span class="icon"><i class="fa-solid fa-caret-right dropdown"></i></span>
+                    </a>
+                    <div class="sub-menu">
+                        <a href="#" class="sub-item">Deneme 1</a>
+                        <a href="#" class="sub-item">Deneme 2</a>
+                        <a href="#" class="sub-item">Deneme 3</a>
+                        <a href="#" class="sub-item">Deneme 4</a>
+                        <a href="#" class="sub-item">Deneme 5</a>
+                    </div>
+                </li>
+
+                <li>
+                    <a href="message.html">
+                        <span class="icon"><i class="fa-regular fa-comment"></i></span>
+                        <span class="title">Mesajlar</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-question"></i></span>
+                        <span class="title">Yardım </span>
+                    </a>
+                </li>
+                <li class="sub-btn">
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-gears"></i></span>
+                        <span class="title">Ayarlar</span>
+                        <span class="icon"><i class="fa-solid fa-caret-right dropdown"></i></span>
+                    </a>
+                    <div class="sub-menu">
+                        <a href="settings.html" class="sub-item">Site Ayarları</a>
+                        <a href="profile.html" class="sub-item">Kullanıcı Ayarları</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="login.html">
+                        <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span class="title">Çıkış</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--MAIN-->
+    <div class="main">
+        <div class="topbar">
+            <div class="toogle"><i class="fa-solid fa-bars"></i></div>
+            <!---==========SEARCH===========
+            <div class="search">
+                <label>
+                    <input type="text" placeholder="Ara">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </label>
+            </div>
+            -->
+            <div class="dark-mode">
+                <span class="switch"></span>
+            </div>
+            <div class="user">
+                <img src="images/image1.jpeg" alt="" onclick="toogleMenu()">
+                <div class="notification-dot"></div>
+            </div>
+            <div class="user-menu-dropdown" id="userMenu">
+                <div class="user-menu">
+                    <div class="user-info">
+                        <h3>Simge Mermertaş</h3>
+                    </div>
+                    <hr>
+                    <div class="user-menu-link">
+                        <ul>
+                            <li>
+                                <a href="profile.html">
+                                    <i class="fa-solid fa-user"></i>
+                                    <h2>Profil</h2>
+                                    <span> <i class="fa-solid fa-caret-right"></i> </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="message.html">
+                                    <i class="fa-solid fa-envelope"></i>
+                                    <h2>Mesajlar</h2>
+                                    <span class="not"> 1 </span>
+                                    <span> <i class="fa-solid fa-caret-right"></i> </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="settings.html">
+                                    <i class="fa-solid fa-gears"></i>
+                                    <h2>Ayarlar</h2>
+                                    <span> <i class="fa-solid fa-caret-right"></i> </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="login.html">
+                                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                                    <h2>Çıkış</h2>
+                                    <span> <i class="fa-solid fa-caret-right"></i> </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--CARDS-->
+        <div class="cardbox">
+            <div class="card">
+                <div class="card-title">
+                    <div class="numbers">1,500</div>
+                    <div class="cardname">Günlük Satış</div>
+                </div>
+                <div class="iconBox"><i class="fa-solid fa-cash-register"></i></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <div class="numbers">%50</div>
+                    <div class="cardname">Kar</div>
+                </div>
+                <div class="iconBox"><i class="fa-solid fa-turkish-lira-sign"></i></div>
+            </div>
+
+            <div class="card">
+                <div class="card-title">
+                    <div class="numbers">10,000</div>
+                    <div class="cardname">Total Kazanç</div>
+                </div>
+                <div class="iconBox"><i class="fa-solid fa-wallet"></i></div>
+            </div>
+
+        </div>
+
+        <!--GRAFİKLER-->
+
+        <div class="grapbox">
+            <div class="box">
+                <canvas id="myChart"></canvas> <!--canvas=grafiğin çizileceği alan-->
+            </div>
+            <div class="box">
+                <canvas id="myLine"></canvas>
+            </div>
+        </div>
+
+        <!--TABLOLAR-->
+
+        <div class="details">
+            <div class="recentOrders">
+                <div class="cardHeader">
+                    <h2>- Sipariş Listesi -</h2>
+                    <a href="#" class="btn" id="showAll">Tümünü Gör</a>
+                </div>
+
+                <table id="table1">
+                    <thead>
+                        <tr>
+                            <td>Ürün</td>
+                            <td>Fiyat</td>
+                            <td>Ödeme</td>
+                            <td>Durum</td>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tableBody">
+                        <tr>
+                            <td>Şampuan</td>
+                            <td>100₺</td>
+                            <td>Ödendi</td>
+                            <td><span class="status teslim">Teslim Edildi</span></td>
+                        </tr>
+                        <tr>
+                            <td>Krem</td>
+                            <td>200₺</td>
+                            <td>Ödendi</td>
+                            <td><span class="status hazir">Sipariş Hazırlanıyor</span></td>
+                        </tr>
+                        <tr>
+                            <td>Losyon</td>
+                            <td>1.000₺</td>
+                            <td>Ödenmedi</td>
+                            <td><span class="status iade">İade Edildi</span></td>
+                        </tr>
+                        <tr>
+                            <td>Şampuan</td>
+                            <td>100₺</td>
+                            <td>Ödendi</td>
+                            <td><span class="status teslim">Teslim Edildi</span></td>
+                        </tr>
+                        <tr>
+                            <td>Şampuan</td>
+                            <td>750₺</td>
+                            <td>Ödendi</td>
+                            <td><span class="status hazir">Sipariş Hazırlanıyor</span></td>
+                        </tr>
+                        <tr>
+                            <td>Saç Boyası</td>
+                            <td>2.000₺</td>
+                            <td>Ödenmedi</td>
+                            <td><span class="status iade">İade Edildi</span></td>
+                        </tr>
+                        <tr>
+                            <td>Saç Spreyi</td>
+                            <td>100₺</td>
+                            <td>Ödendi</td>
+                            <td><span class="status teslim">Teslim Edildi</span></td>
+                        </tr>
+                        <tr>
+                            <td>Şampuan</td>
+                            <td>100₺</td>
+                            <td>Ödendi</td>
+                            <td><span class="status hazir">Sipariş Hazırlanıyor</span></td>
+                        </tr>
+                        <tr>
+                            <td>Şampuan</td>
+                            <td>100₺</td>
+                            <td>Ödenmedi</td>
+                            <td><span class="status iade">İade Edildi</span></td>
+                        </tr>
+                        <tr>
+                            <td>ŞampuanŞampuanŞampuanŞampuanŞampuan</td>
+                            <td>100₺</td>
+                            <td>Ödendi</td>
+                            <td><span class="status teslim">Teslim Edildi</span></td>
+                        </tr>
+                        <tr>
+                            <td>DENEME DENEME</td>
+                            <td>100₺</td>
+                            <td>Ödendi</td>
+                            <td><span class="status hazir">Sipariş Hazırlanıyor</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="pagination" id="pagination1">
+                <ul class="page">
+                    <li><a href="#">Önceki</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">20</a></li>
+                    <li><a href="#">Sonraki</a></li>
+                </ul>
+            </div>
+            <div class="recentcustomers">
+                <div class="baslik">
+                    <div class="cardHeader">
+                        <h2>- Cari Listesi -</h2>
+                    </div>
+                    <div class="search">
+                        <label>
+                            <input type="text" placeholder="Ara" id="searchInput">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </label>
+                    </div>
+                    <a href="#" class="btn" id="addNew">Ekle</a>
+                </div>
+                <table id="table2">
+                    <thead>
+                        <tr>
+                            <td>Profil</td>
+                            <td>Cari Adı</td>
+                            <td>Yetkili</td>
+                            <td>İşlemler</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox"><img src="images/image1.jpeg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Ali</h4>
+                            </td>
+                            <td>
+                                <h4>Simge Mermertaş</h4>
+                            </td>
+                            <td class="button">
+                                <a href="#" class="update"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="#" class="delete"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox"><img src="images/image1.jpeg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Veli</h4>
+                            </td>
+                            <td>
+                                <h4>Simge Mermertaş</h4>
+                            </td>
+                            <td class="button">
+                                <a href="#" class="update"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="#" class="delete"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox"><img src="images/image1.jpeg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Simge</h4>
+                            </td>
+                            <td>
+                                <h4>DENEME</h4>
+                            </td>
+                            <td class="button">
+                                <a href="#" class="update"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="#" class="delete"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox"><img src="images/image1.jpeg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>SEDA</h4>
+                            </td>
+                            <td>
+                                <h4>Simge Mermertaş</h4>
+                            </td>
+                            <td class="button">
+                                <a href="#" class="update"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="#" class="delete"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox"><img src="images/image1.jpeg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Simge</h4>
+                            </td>
+                            <td>
+                                <h4>Simge Mermertaş132135464</h4>
+                            </td>
+                            <td class="button">
+                                <a href="#" class="update"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="#" class="delete"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox"><img src="images/image1.jpeg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>SİMGE</h4>
+                            </td>
+                            <td>
+                                <h4>Simge Mermertaş</h4>
+                            </td>
+                            <td class="button">
+                                <a href="#" class="update"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="#" class="delete"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox"><img src="images/image1.jpeg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>SİMGE</h4>
+                            </td>
+                            <td>
+                                <h4>1235445421</h4>
+                            </td>
+                            <td class="button">
+                                <a href="#" class="update"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="#" class="delete"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgbox"><img src="images/login.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>Seda Sağlık</h4>
+                            </td>
+                            <td>
+                                <h4>1235445421</h4>
+                            </td>
+                            <td class="button">
+                                <a href="#" class="update"><i class="fa-regular fa-pen-to-square"></i></a>
+                                <a href="#" class="delete"><i class="fa-solid fa-trash-can"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <div class="pagination" id="pagination2">
+                <ul class="page">
+                    <li><a href="#">Önceki</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">...</a></li>
+                    <li><a href="#">20</a></li>
+                    <li><a href="#">Sonraki</a></li>
+                </ul>
+            </div>
+
+            <!-- Modal Penceresi (EKLE) -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Cari Ekle</h2>
+                    <form id="crudForm">
+                        <label for="name">Cari Adı:</label>
+                        <input type="text" id="name" name="name" required>
+
+                        <label for="responsible">Yetkili:</label>
+                        <input type="text" id="responsible" name="responsible" required>
+
+                        <label for="profilePic">Profil Resmi:</label>
+                        <input type="file" id="profilePic" name="profilePic" accept="image/png, image/jpeg">
+
+                        <button class="btn" type="submit" id="saveButton">Kaydet</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Ekleme Başarılı Modal -->
+            <div id="addSuccessModal" class="modalSuc">
+                <div class="modal-content">
+                    <p>Cari başarıyla eklendi!</p>
+                    <div class="checkmark-container">
+                        <div class="checkmark">
+                            <div class="checkmark-stem"></div>
+                            <div class="checkmark-kick"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Silme Onayı İçin Modal -->
+            <div id="deleteModal" class="modalDel">
+                <div class="modal-content">
+                    <span class="close" id="deleteClose">&times;</span>
+                    <p>Bu cariyi silmek istediğinizden emin misiniz?</p>
+                    <button id="confirmDelete" class="btn">Sil</button>
+                    <button id="cancelDelete" class="btn">İptal</button>
+                </div>
+            </div>
+
+            <!-- Silme Başarılı Modal -->
+            <div id="successModal" class="modalSuc">
+                <div class="modal-content">
+                    <p>Cari başarıyla silindi!</p>
+                    <div class="checkmark-container">
+                        <div class="checkmark">
+                            <div class="checkmark-stem"></div>
+                            <div class="checkmark-kick"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Güncelleme Modal -->
+            <div id="updateModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="updateClose">&times;</span>
+                    <h2>Cariyi Güncelle</h2>
+                    <form id="updateForm">
+                        <label for="updateName">Cari Adı:</label>
+                        <input type="text" id="updateName" name="updateName" value="">
+
+                        <label for="updateResponsible">Yetkili:</label>
+                        <input type="text" id="updateResponsible" name="updateResponsible" value="">
+
+                        <label for="updateProfilePic">Profil Resmi:</label>
+                        <img id="currentProfilePic" src="" alt="Current Profile Picture">
+                        <input type="file" id="updateProfilePic" name="updateProfilePic" accept="image/png, image/jpeg">
+
+                        <button type="submit" class="btn">Güncelle</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Güncelleme Başarılı Modal -->
+            <div id="UpsuccessModal" class="modalSuc">
+                <div class="modal-content">
+                    <p>Cari başarıyla güncellendi!</p>
+                    <div class="checkmark-container">
+                        <div class="checkmark">
+                            <div class="checkmark-stem"></div>
+                            <div class="checkmark-kick"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <footer>© Copyright 2024 Starktech Yazılım Teknolojileri. All Rights Reserved</footer>
+    </div>
+
+
+   
+
+    <!---SCRIPTS--> <!--==NOT: AŞAĞIDAKİ SIRAYLA YAZILMALI===-->
+
+    <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="my_Chart.js"></script>
+
+</body>
+
+</html>
